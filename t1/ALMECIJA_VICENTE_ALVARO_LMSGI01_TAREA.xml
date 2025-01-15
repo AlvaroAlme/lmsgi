@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    tipo_juego
+        id_juego
+        nombre
+        num_min_jugadores
+        num_max_jugadores
+        descripcion
+    jugadoes
+        id_jugador
+        nombre
+        ape1
+        ape2
+        apodo
+    partidas
+        id_partida
+        id_juego
+        id_jugador
+        equipo
+        fecha_partida
+        ganador
+    campeonato
+        id_partida
+        ganador
+        ronda
+
+-->
+<club>
+    <juegos>
+        <juego id_juego="j1">
+            <nombre>dominó</nombre>
+            <min_jugadores>2</min_jugadores>
+            <max_jugadores>4</max_jugadores>
+            <desripcion>Un juego de mesa donde los jugadores colocan fichas con números en sus
+                extremos.</desripcion>
+        </juego>
+        <juego id_juego="j2">
+            <nombre>brisca</nombre>
+            <min_jugadores>2</min_jugadores>
+            <max_jugadores>6</max_jugadores>
+            <desripcion>Juego de cartas que se juega por parejas o individualmente, el objetivo es
+                acumular puntos a traves de las cartas ganadas en la mano.</desripcion>
+        </juego>
+        <juego id_juego="j3">
+            <nombre>julepe</nombre>
+            <min_jugadores>2</min_jugadores>
+            <max_jugadores>4</max_jugadores>
+            <desripcion>Juego de cartas que se juega en varias rondas, donde los jugadores apuestan
+                puntos.Gana quien tenga la puntuacion mas alta combinando sus cartas.</desripcion>
+        </juego>
+
+    </juegos>
+    <socios>
+        <socio id_socio="A001">
+            <nombre_completo>
+                <nombre>Nacho</nombre>
+                <ape1>Albaladejo</ape1>
+                <ape2>Algar</ape2>
+            </nombre_completo>
+            <fecha_nacimiento>12-10-1945</fecha_nacimiento>
+            <apodo>Gripe</apodo>
+        </socio>
+        <socio id_socio="A002">
+            <nombre_completo>
+                <nombre>Sergio</nombre>
+                <ape1>Sanchez</ape1>
+                <ape2>Rivera</ape2>
+            </nombre_completo>
+            <fecha_nacimiento>22-11-1949</fecha_nacimiento>
+            <apodo>Stone</apodo>
+        </socio>
+        <socio id_socio="A003">
+            <nombre_completo>
+                <nombre>Samuel</nombre>
+                <ape1>Garcia</ape1>
+                <ape2>Bañon</ape2>
+            </nombre_completo>
+            <fecha_nacimiento>12-10-1949</fecha_nacimiento>
+            <apodo>Aku</apodo>
+        </socio>
+        <socio id_socio="A004">
+            <nombre_completo>
+                <nombre>Jaime</nombre>
+                <ape1>Florenciano</ape1>
+                <ape2>Fernandez</ape2>
+            </nombre_completo>
+            <fecha_nacimiento>31-12-1945</fecha_nacimiento>
+            <apodo>Ganjaman</apodo>
+        </socio>
+    </socios>
+    <partidas>
+        <partida id_partida="P1">
+            <id_juego>j1</id_juego>
+            <jugadores>
+                <jugador ref="A001" />
+                <jugador ref="A003" />
+            </jugadores>
+            <fecha_partida>25-12-2020</fecha_partida>
+            <ganadores>
+                <ganador ref="A001" />
+            </ganadores>
+        </partida>
+        <partida id_partida="P2">
+            <id_juego>j1</id_juego>
+            <jugadores>
+                <jugador ref="A002" />
+                <jugador ref="A004" />
+            </jugadores>
+            <fecha_partida>25-12-2020</fecha_partida>
+            <ganadores>
+                <ganador ref="A002" />
+            </ganadores>
+        </partida>
+        <partida id_partida="P3">
+            <id_juego>j1</id_juego>
+            <jugadores>
+                <jugador ref="A002" />
+                <jugador ref="A003" />
+            </jugadores>
+            <fecha_partida>25-12-2020</fecha_partida>
+            <ganadores>
+                <ganador ref="A003" />
+            </ganadores>
+        </partida>
+        <partida id_partida="P1">
+            <id_juego>j2</id_juego>
+            <jugadores>
+                <jugador ref="A001" />
+                <jugador ref="A004" />
+            </jugadores>
+            <fecha_partida>25-12-2020</fecha_partida>
+            <ganadores>
+                <ganador ref="A001" />
+            </ganadores>
+        </partida>
+    </partidas>
+
+    <campeonato>
+        <campeonato id_campeonato="C1" />
+        <nombre>DogFightTournament</nombre>
+        <fecha_campeonato>25-12-2020</fecha_campeonato>
+        <num_participantes>4</num_participantes>
+        <modalidad>individual</modalidad>
+        <partidas>
+            <id_partida>P1
+                <ganador ref="A003"/>
+            </id_partida>
+            <id_partida>P2
+                <ganador ref="A002"/>
+            </id_partida>
+            <id_partida>P3
+                <ganador ref="A003"/>
+            </id_partida>
+        </partidas>
+        <ganador_campeonato ref="A003"/>
+
+    </campeonato>
+
+
+</club>

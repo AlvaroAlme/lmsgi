@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<!--ELEMENTO RAIZ MODULO-->
+    <!--DEFINIMOS EL ELEMENTO MODULO-->
+    <xsd:complexType name="datosModulo">
+        <xsd:attribute name="id" type="xsd:string"/>
+        <xsd:attribute name="titulo" type="xsd:string" />
+        <xsd:sequence>
+            <xsd:element name="unidades" type="datosUnidades" />
+            <xsd:element name="prueba" type="datosPrueba" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO UNIDADES-->
+    <xsd:complexType name="datosUnidades">
+        <xsd:sequence>
+            <xsd:element name="unidad" type="datosUnidad"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO UNIDAD-->
+    <xsd:complexType name="datosUnidad">
+        <xsd:attribute name="id" type="xs:ID" maxOccurs="1" />
+        <xsd:attribute name="nombre" type="xsd:string" />
+        <xsd:sequence>
+            <xsd:element name="test" type="datosTest"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO TEST-->
+    <xsd:complexType name="datosTest">
+        <xsd:attribute name="id" type="xs:ID" maxOccurs="1" />
+        <xsd:attribute name="orden" type="xsd:integer"/>
+            <xsd:restriction base="xsd:integer">
+                <xsd:minInclusive value="1"/>
+                <xsd:maxInclusive value="999"/>
+            </xsd:restriction>
+        <xsd:sequence>
+            <xsd:element name="pregunta" type="xsd:string"/>
+            <xsd:element name="opciones" type="datosOpciones"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO OPCIONES-->
+    <xsd:complexType name="datosOpciones">
+        <xsd:sequence>
+            <xsd:element name="opcion" type="datosOpcion"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO OPCION-->
+    <xsd:complexType name="datosOpcion">
+        <xsd:attribute name="rotulo" type="xsd:string" />
+        <xsd:attribute name="descripcion" type="xsd:string" />
+            <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="200"/>
+            </xsd:restriction>
+        <xsd:attribute name="correcta" type="xsd:boolean" maxOccurs="1" />
+    </xsd:complexType>
+
+    <!--ELEMENTO PRUEBA-->
+    <xsd:complexType name="datosPrueba">
+        <xsd:attribute name="id" type="xs:ID" maxOccurs="1" />
+        <xsd:attribute name="titulo" type="xsd:string" />
+        <xsd:attribute name="fecha" type="xsd:date" />
+        <xsd:sequence>
+            <xsd:element name="parte" type="datosParte"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO PARTE-->
+    <xsd:complexType name="datosParte">
+        <xsd:attribute name="id" type="xs:ID" maxOccurs="1" />
+        <xsd:attribute name="titulo" type="xsd:string" />
+        <xsd:attribute name="tarea" type="xsd:string" />
+        <xsd:attribute name="puntos_totales" type="xsd:decimal" />
+        <xsd:sequence>
+            <xsd:element name="ejercicio" type="datosEjercicio"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO EJERCICIO-->
+    <xsd:complexType name="datosEjercicio">
+        <xsd:attribute name="id" type="xs:ID" maxOccurs="1" />
+            <xsd:restriction base="xs:ID">
+                <xsd:pattern value="(P)[1-9](E)[1-99]"/>
+            </xsd:restriction>
+        <xsd:attribute name="puntos" type="xsd:decimal" />
+            <xsd:restriction base="xsd:decimal">
+                <xsd:totalDigits value="2"/>
+                <xsd:fractionDigits value="3"/>
+                <xsd:minInclusive value="0"/>
+            </xsd:restriction>
+        <xsd:attribute name="unidad" type="xsd:idref" />
+        <xsd:sequence>
+            <xsd:element name="enunciado" type="xsd:string"/>
+            <xsd:element name="items" type="datosItems"/>
+            <xsd:element name="anexos" type="datosAnexos"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO ITEMS-->
+    <xsd:complexType name="datosItems">
+        <xsd:sequence>
+            <xsd:element name="item" type="datosItem"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO ITEM-->
+    <xsd:complexType name="datosItem">
+        <xsd:attribute name="descripcion" type="xsd:string" />
+        <xsd:attribute name="peso" type="xsd:decimal" />
+    </xsd:complexType>
+
+    <!--ELEMENTO ANEXOS-->
+    <xsd:complexType name="datosAnexos">
+        <xsd:sequence>
+            <xsd:element name="anexo" type="datosAnexo"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--ELEMENTO ANEXO-->
+    <xsd:complexType name="datosAnexo">
+        <xsd:attribute name="src" type="xsd:string" />
+    </xsd:complexType>
+</xsd:element>
+</xsd:schema>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>LMSGI02 - Ejercicio</title>
+        <style>
+            h1{
+                
+                padding: 25px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>actividades extraescolares - formulario</h1>
+
+        <form name="formulario" method="post">
+            <fieldset>
+                <legend><strong>Alta/Edicion de Actividad: </strong></legend>
+                <label for="mailProfesor">E-mail profesor responsable: </label>
+                <input type="email" id="mailProfesor" name="mailProfesor" required>
+
+                <label for="nombreProfesor">Nombre profesor responsable: </label>
+                <input type="text" id="nombreProfesor" name="nombreProfesor" required>
+                <br>
+                <br>
+
+                <label for="profesoresAcompaniantes">Nombre profesores acompañantes: </label>
+                <input type="text" id="profesoresAcompaniantes" name="profesoresAcompaniantes">
+                <br>
+                <br>
+
+                <label for="tituloActividad">Titulo de la actividad: </label>
+                <input type="text" id="tituloActividad" name="tituloActividad">
+                <br>
+                <br>
+
+                <label for="descripcionActividad">Descripcion de la actividad: </label><br>
+                <textarea id="descripcionActividad" name="descripcionActividad" rows="5" cols="50"></textarea>
+                <br>
+                <br>
+
+                <label for="departamento"> Departamento: </label>
+                <select id="departamento" name="departamento" required>
+                    <option value="" selected disabled>--Seleccione uno--</option>
+                    <option value="1">Lenguaje de Marcas</option>
+                    <option value="2">Diseño de interfaces web</option>
+                    <option value="3">Desarrollo en entorno cliente</option>
+                    <option value="4">Desarrollo en entorno servidor</option>
+                    <option value="5">Despliegue de aplicaciones web</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="boolValorado">Valorado: </label>
+                <input type="checkbox" id="boolValorado" name="boolValorado">
+                <br>
+                <br>
+
+                <fieldset>
+                    <legend><strong><b>Fecha y hora de inicio de la actividad o salida del IES: </b></strong></legend>
+                    <label for="fechaInicio">Fecha</label>
+                    <input type="date" id="fechaInicio" name="fechaInicio">
+                    <label for="horaInicio">Hora</label>
+                    <input type="time" id="horaInicio" name="horaInicio">
+                </fieldset>
+                <fieldset>
+                    <legend><strong>Fecha y hora de fin de la actividad o llegada al IES: </strong></legend>
+                    <label for="fechaFin">Fecha</label>
+                    <input type="date" id="fechaFin" name="fechaFin">
+                    <label for="horaFin">Hora</label>
+                    <input type="time" id="horaFin" name="horaFin">
+                </fieldset>
+                <br>
+                <br>
+                <br>
+
+                <label for="lugarActividad"> Luigar de realizacion de la actividad (indicar lugar, municipio, provincia...Lo mas completo posible)</label><br>
+                <textarea id="lugarActividad" name="lugarActividad" rows="3" cols="50"></textarea>
+                <br>
+                <br>
+
+                <label for="alumnosImplicados">Grupos de alumnos implicados (Seleccione uno o varios)</label><br>
+                <select multiple id="alumnosImplicados" name="alumnosImplicados">
+                    <option value="1">DAM1</option>
+                    <option value="2">DAM2</option>
+                    <option value="3">DAw1</option>
+                    <option value="4">DAw2</option>
+                </select>
+                <br>
+                <br>
+                <br>
+
+                <label for="boolAutobus">¿Se necesita atuobús?</label><br>
+                <input type="radio" value="Si"> Si
+                <input type="radio" value="No"> No
+
+                <br>
+                <br>
+
+                <label for="costeActividad">Coste de la actividad (€) para el alumno, incluyendo los gastos de autobus si es necesario</label>
+                <input type="text" id="costeActividad" name="costeActividad">
+
+                <br>
+                <br>
+
+                <label for="Añadir atuorizacion firmada">Añadir autorizacion firmada: </label>
+                <input type="file" id="autorizacionFirmada" name="autorizacionFirmada">
+                <br>
+                <br>
+                
+                <button>Enviar</button>
+            </fieldset>    
+        </form>
+    </body>
+</html>

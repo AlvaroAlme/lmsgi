@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="./LMSGI04.dtd" type="application/xml-dtd"?>
+<modulo id="LM" titulo="Lenguajes de Marcas y SGI">
+    <unidades>
+        <unidad id="UT1" nombre="XML" >
+            <test id="T01001" orden="1">
+                <pregunta>¿Qué partes componen un elemento XML?</pregunta>
+                <opciones>
+                    <opcion rotulo="a" descripcion="Etiqueta, contenido de apertura y clausura y entidad" />
+                    <opcion rotulo="b" descripcion="Etiquetas de apertura y clausura, contenido y atributos" correcta="true" />
+                    <opcion rotulo="c" descripcion="Atributos, entidad de apertura y clausura y contenido" />
+                    <opcion rotulo="d" descripcion="Entidades, relaciones y atributos de apertura y clausura" />
+                </opciones>
+            </test>
+            <test id="T01002" orden="2">
+                <pregunta>¿Qué significa que un documento XML es válido?</pregunta>
+                <opciones>
+                    <opcion rotulo="a" descripcion="Que su sintaxis es correcta y puede leerse con un parser XML estándar" />
+                    <opcion rotulo="b" descripcion="Que su contenido responde a unas especificaciones, aunque posea errores sintácticos" />
+                    <opcion rotulo="c" descripcion="Que es sintácticamente correcto y además cumple unos requisitos respecto a su estructura y semántica" correcta="true" />
+                    <opcion rotulo="d" descripcion="Todo lo del punto c y además una autoridad certificadora lo ha verificado y firmado digitalmente" />
+                </opciones>
+            </test>
+        </unidad>
+        <unidad id="UT2" nombre="HTML+CSS" />
+        <unidad id="UT3" nombre="RSS+ATOM" />
+        <unidad id="UT4" nombre="Validación" />
+        <unidad id="UT5" nombre="XPath+XSLT" />
+        <unidad id="UT6" nombre="XQuery" />
+        <unidad id="UT7" nombre="SGI" />
+    </unidades>
+    <prueba id="P20220301" titulo="Final de marzo de 2022" fecha="2022-03-01">
+        <parte id="P1" titulo="Recuperación 1"  tarea="https://ead.murciaeduca.es/mod/assign/view.php?id=699629" puntos_totales="10.0">
+            <ejercicio id="P1E1" puntos="3.0" unidad="UT1">
+                <enunciado>
+                    Diseña un archivo XML que cumpla con las siguientes especificaciones: ...
+                </enunciado>                    
+                <items>
+                    <item descripcion="El XML está bien formado" peso="30" />
+                    <item descripcion="Estructura de nodos" peso="30" />
+                    <item descripcion="Uso de atributos/valores" peso="20" />
+                    <item descripcion="Datos de ejemplo" peso="20" />
+                </items>
+            </ejercicio>
+            <ejercicio id="P1E2" puntos="2.5" unidad="UT2">
+                <enunciado>
+                    Diseña una página HTML como la que puede verse en la captura: ...
+                </enunciado>                    
+                <items>
+                    <item descripcion="Corrección sintáctica" peso="20" />
+                    <item descripcion="Estructura de capas" peso="30" />
+                    <item descripcion="Etiquetas HTML5" peso="20" />
+                    <item descripcion="Metadatos" peso="20" />
+                    <item descripcion="Uso de entidades" peso="10" />
+                </items>
+                <anexos>
+                    <anexo src="captura_p1e2.png"/>
+                </anexos>
+            </ejercicio>
+            <ejercicio id="P1E3" puntos="2.5" unidad="UT2">
+                <enunciado>
+                    Desarrolla las reglas CSS para: ...
+                </enunciado>                    
+                <items>
+                    <item descripcion="Regla 1"/>
+                    <item descripcion="Regla 2"/>
+                    <item descripcion="Regla 3"/>
+                    <item descripcion="Regla 4"/>
+                    <item descripcion="Regla 5"/>
+                </items>
+            </ejercicio>
+            <ejercicio id="P1E4" puntos="2.0" unidad="UT3">
+                <enunciado>
+                    Crea un archivo RSS que responda a estos requisitos: ...
+                </enunciado>                    
+                <items>
+                    <item descripcion="Requisito 1" />
+                    <item descripcion="Requisito 2" />
+                    <item descripcion="Requisito 3" />
+                    <item descripcion="Requisito 4" />
+                </items>
+            </ejercicio>
+        </parte>
+    </prueba>
+</modulo>

@@ -1,0 +1,51 @@
+<!ELEMENT modulo (unidades+, prueba*)>
+    <!ATTLIST modulo id ID #FIXED "LM">
+    <!ATTLIST modulo titulo CDATA #FIXED "Lenguajes de Marcas y SGI">
+
+<!ELEMENT unidades (unidad+)>
+
+<!ELEMENT unidad (test*)>
+    <!ATTLIST unidad id ID #REQUIRED>
+    <!ATTLIST unidad nombre CDATA #REQUIRED>
+
+<!ELEMENT test (pregunta*, opciones*)>
+    <!ATTLIST test id ID #REQUIRED>
+    <!ATTLIST test orden CDATA #REQUIRED>
+
+<!ELEMENT pregunta (#PCDATA)>
+
+<!ELEMENT opciones (opcion+)>
+
+<!ELEMENT opcion (#PCDATA)>
+    <!ATTLIST opcion rotulo NMTOKEN #REQUIRED>
+    <!ATTLIST opcion descripcion CDATA #IMPLIED>
+    <!ATTLIST opcion correcta NMTOKEN #FIXED "true">
+
+
+<!ELEMENT prueba (parte+)>
+    <!ATTLIST prueba id ID #REQUIRED>
+    <!ATTLIST prueba titulo CDATA #REQUIRED>
+    <!ATTLIST prueba fecha NMTOKENS #REQUIRED>
+
+<!ELEMENT parte (ejercicio+)>
+    <!ATTLIST parte id ID #REQUIRED>
+    <!ATTLIST parte titulo CDATA #REQUIRED>
+    <!ATTLIST parte tarea CDATA #IMPLIED>
+    <!ATTLIST parte puntos_totales NMTOKENS #REQUIRED>
+
+<!ELEMENT ejercicio (enunciado+, items?, anexos?)>
+    <!ATTLIST ejercicio id ID #REQUIRED>
+    <!ATTLIST ejercicio puntos NMTOKENS #REQUIRED>
+    <!ATTLIST ejercicio unidad IDREF #REQUIRED>
+
+<!ELEMENT enunciado (#PCDATA)>
+
+<!ELEMENT items (item+)>
+
+<!ELEMENT item (#PCDATA)>
+    <!ATTLIST item descripcion CDATA #REQUIRED>
+    <!ATTLIST item peso CDATA #IMPLIED>
+
+<!ELEMENT anexos (anexo+)>
+<!ELEMENT anexo (#PCDATA)>
+    <!ATTLIST anexo src NMTOKENS #IMPLIED>
